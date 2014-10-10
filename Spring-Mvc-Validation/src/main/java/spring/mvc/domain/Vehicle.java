@@ -13,9 +13,10 @@ public class Vehicle implements Serializable {
 
 	private String name;
 
-	@Length(min = 3, max = 10, message = "Model name should be 3 to 10 characters")
+	@Length(min = 3, max = 10, message = "{length.vehicle.model}")
 	private String model;
-	@Min(value = 2000, message = "This is very old we are supporting only above 2000")
+	
+	@Min(value = 2000, message = "{min.vehicle.year}")
 	private int year;
 
 	public String getModel() {
