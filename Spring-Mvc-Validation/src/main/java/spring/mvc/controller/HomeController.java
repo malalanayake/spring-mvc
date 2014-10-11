@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import spring.mvc.domain.Person;
+import spring.mvc.domain.Stock;
 import spring.mvc.domain.Vehicle;
 import spring.mvc.service.PersonService;
 
@@ -75,6 +76,25 @@ public class HomeController {
 			return "vehicle";
 		} else {
 			return "vehicle_view";
+		}
+	}
+	
+
+	@RequestMapping(value = "/stock.do", method = RequestMethod.GET)
+	public String stock(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		model.addAttribute("stock", new Stock());
+
+		return "stock";
+	}
+
+	@RequestMapping(value = "/stock_save.do", method = RequestMethod.POST)
+	public String saveStock(@Valid Stock stock,
+			BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "stock";
+		} else {
+			return "stock_view";
 		}
 	}
 
