@@ -53,7 +53,7 @@ public class HomeController {
 			return "person";
 		} else {
 			personService.addNewPerson(person);
-			return "main";
+			return "person_view";
 		}
 	}
 
@@ -65,16 +65,16 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		model.addAttribute("vehicle", new Vehicle());
 
-		return "home";
+		return "vehicle";
 	}
 
 	@RequestMapping(value = "/save_vehicle.do", method = RequestMethod.POST)
 	public String saveVehical(@Valid Vehicle vehicle,
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
-			return "home";
-		} else {
 			return "vehicle";
+		} else {
+			return "vehicle_view";
 		}
 	}
 
