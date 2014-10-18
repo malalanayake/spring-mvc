@@ -11,5 +11,6 @@
 	<p><a href="vehicle.do">Vehicle with form binding</a></p>
 	<p><a href="person.do">Person with Custom validation in field level</a></p>
 	<p><a href="stock.do">Stock with Custom validation in class level</a></p>
+	<p><a href="exam.do">Final Exam test</a></p>
 </body>
 </html>
