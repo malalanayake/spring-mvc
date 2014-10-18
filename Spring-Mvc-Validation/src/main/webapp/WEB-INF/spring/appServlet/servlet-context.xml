@@ -33,6 +33,16 @@
 		<beans:property name="validationMessageSource" ref="errorMessageSource" />
 	</beans:bean>
 	
+	<!-- Using for the store the language specification -->
+	<beans:bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<beans:property name="defaultLocale" value="en" />
+	</beans:bean>
+	
+	<beans:bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<beans:property name="basename" value="internationalized" />
+	</beans:bean>
 	
 		
 </beans:beans>
